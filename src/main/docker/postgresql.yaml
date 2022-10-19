@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  spring-postgresql:
+    container_name: spring-postgres
+    image: postgres:14.2
+    # volumes:
+    #   - ~/Docker/volumes/spring/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=cvision
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 127.0.0.1:15432:5432
+    tty: true
